@@ -60,7 +60,16 @@ module.exports = (sequelize, DataTypes) => {
 		}
 	);
 
-	// User.associate = models => {};
+	User.associate = models => {
+		User.hasMany(models.assignment, {
+			foreignKey: "mentor",
+			otherKey: "id",
+			as: {
+				singular: "assignment",
+				plural: "assignments"
+			}
+		});
+	};
 
 	User.prototype.comparePassword = function (password) {
 		// note: remember to add unscoped() to the user query

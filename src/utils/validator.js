@@ -2,6 +2,7 @@ const { validationResult } = require("express-validator");
 const { StatusCodes } = require("http-status-codes");
 const { Op } = require("sequelize");
 const models = require("../models");
+const moment = require("moment");
 
 const isValidated = rules => {
 	return [
@@ -40,6 +41,14 @@ const isUniqueUserEmail =
 		return true;
 	};
 
+const isDateValid = date => {
+	if (moment(date) > moment()) {
+		throw new Error("Input date is invalid");
+	}
+
+	return true;
+};
+
 const minLengthMessage = (label, min) => {
 	return `${label} must be minimum ${min} characters long`;
 };
@@ -50,6 +59,7 @@ const maxLengthMessage = (label, max) => {
 
 module.exports = {
 	isValidated,
+	isDateValid,
 	minLengthMessage,
 	maxLengthMessage,
 	isUniqueUserEmail

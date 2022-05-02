@@ -12,7 +12,7 @@ module.exports =
 			return next(new UnauthenticatedError("You need to sign in first"));
 		}
 
-		const role = await getUserRole(req.user.id, ...grantedRoles);
+		const role = await getUserRole(req.user.id, grantedRoles);
 
 		if (!role) {
 			return next(
