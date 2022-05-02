@@ -1,7 +1,7 @@
 const { ADMIN, MENTOR, STUDENT } = require("../../utils/roles.const");
 const UnauthenticatedError = require("../../error/Unauthenticated.error");
 const UnauthorizedError = require("../../error/Unauthorized.error");
-const getUserRole = require("../../packages/auth/getUserRole");
+const getUserRole = require("../../utils/getUserRole");
 
 module.exports =
 	(...grantedRoles) =>

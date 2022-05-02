@@ -1,6 +1,6 @@
 const { Op } = require("sequelize");
-const models = require("../../models");
-const { APPROVED } = require("../../utils/status.const");
+const models = require("../models");
+const { APPROVED } = require("./status.const");
 
 module.exports = async (userId, roles) => {
 	const users = await models.user.findOne({

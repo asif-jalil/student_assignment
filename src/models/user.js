@@ -60,7 +60,7 @@ module.exports = (sequelize, DataTypes) => {
 		}
 	);
 
-	User.associate = models => {};
+	// User.associate = models => {};
 
 	User.prototype.comparePassword = function (password) {
 		// note: remember to add unscoped() to the user query
