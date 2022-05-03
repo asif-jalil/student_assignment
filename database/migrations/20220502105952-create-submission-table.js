@@ -1,7 +1,6 @@
 "use strict";
 
 const seq = require("sequelize");
-const assignment = require("../../src/models/assignment");
 
 module.exports = {
 	/**

@@ -55,6 +55,12 @@ module.exports = (sequelize, DataTypes) => {
 			otherKey: "id",
 			as: "assignment"
 		});
+
+		Submission.hasOne(models.gradeSheet, {
+			foreignKey: "submissionId",
+			otherKey: "id",
+			as: "grade"
+		});
 	};
 
 	return Submission;
