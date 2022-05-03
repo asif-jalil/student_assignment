@@ -1,0 +1,9 @@
+Design 2
+Responsive 1
+Search 1
+Pagination 1
+Filter 2
+Handle api 1
+Deploy 1
+Github readme 1
+Code Quality 5

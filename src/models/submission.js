@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
-	const Assignment = sequelize.define(
-		"assignment",
+	const Submission = sequelize.define(
+		"submission",
 		{
 			id: {
 				allowNull: false,
@@ -8,15 +8,17 @@ module.exports = (sequelize, DataTypes) => {
 				primaryKey: true,
 				type: DataTypes.INTEGER
 			},
-			title: {
+			assignmentId: {
 				allowNull: false,
-				type: DataTypes.STRING(255)
+				references: {
+					key: "id",
+					model: "assignments"
+				},
+				onDelete: "CASCADE",
+				onUpdate: "CASCADE",
+				type: DataTypes.INTEGER
 			},
-			description: {
-				allowNull: true,
-				type: DataTypes.TEXT
-			},
-			mentor: {
+			submittedBy: {
 				allowNull: false,
 				references: {
 					key: "id",
@@ -26,37 +28,34 @@ module.exports = (sequelize, DataTypes) => {
 				onUpdate: "CASCADE",
 				type: DataTypes.INTEGER
 			},
-			deadline: {
-				allowNull: false,
-				type: DataTypes.DATE
+			file: {
+				allowNull: true,
+				type: DataTypes.STRING(255)
+			},
+			link: {
+				allowNull: true,
+				type: DataTypes.STRING(255)
 			},
 			createdAt: {
 				allowNull: false,
+				field: "submissionDate",
 				type: DataTypes.DATE
 			}
 		},
 		{
-			tableName: "assignments",
+			tableName: "submissions",
 			timestamps: true,
 			updatedAt: false
 		}
 	);
 
-	Assignment.associate = models => {
-		Assignment.belongsTo(models.user, {
-			foreignKey: "mentor",
-			otherKey: "id"
-		});
-
-		Assignment.hasMany(models.submission, {
+	Submission.associate = models => {
+		Submission.belongsTo(models.assignment, {
 			foreignKey: "assignmentId",
 			otherKey: "id",
-			as: {
-				singular: "submission",
-				plural: "submissions"
-			}
+			as: "assignment"
 		});
 	};
 
-	return Assignment;
+	return Submission;
 };
