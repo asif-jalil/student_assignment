@@ -1,0 +1,55 @@
+    MIAMITRAFFIC - Aggressive Drivers
+    NUTTERTOOLS - All heavy weapons
+    THUGSTOOLS - All light weapons
+    PROFESSIONALTOOLS - All medium weapons
+    CATSANDDOGS - Stormy Weather
+    ALOVELYDAY - Sunny
+    ABITDRIEG - Dense Clouds
+    APLEASANTDAY - Light Clouds/clear
+    CANTSEEATHING - Foggy Weather
+    ILOOKLIKEHILARY - Play as Hilary King
+    MYSONISALAWYER - Play as Ken Rosenberg
+    LOOKLIKELANCE - Play as Lance Vance
+    WELOVEOURDICK - Play as Love Fist character (Dick)
+    ROCKANDROLLMAN - Play as Love Fist character (Jezz Torent)
+    FOXYLITTLETHING - Play as Mercedes
+    ONEARMEDBANDIT - Play as Phil Cassidy
+    CHEATSHAVEBEENCRACKED - Play as Ricardo Diaz
+    IDONTHAVETHEMONEYSONNY - Play as Sonny Forelli
+    STILLLIKEDRESSINGUP - Change Skin/Clothes
+    DEEPFRIEDMARSBARS - Makes Tommy fatter
+    PRECIOUSPROTECTION - Full Armor
+    ASPIRINE - Full Health
+    IWANTITPAINTEDBLACK - All cars are black
+    AHAIRDRESSERSCAR - All cars are pink
+    GREENLIGHT - All traffic lights are green
+    ICANTTAKEITANYMORE - Commit Suicide
+    LEAVEMEALONE - Decrease Wanted Level
+    YOUWONTTAKEMEALIVE - Raise Wanted Level
+    AIRSHIP - Fast boats can fly for short periods of time
+    CHICKSWITHGUNS - Girls Carry Guns
+    FANNYMAGNET - Ladies Man, Women Follow You
+    ONSPEED - Makes everything faster
+    BOOOOOORING - Makes everything slower
+    CERTAINDEATH - Makes you smoke a cigarette
+    BIGBANG - Blow up nearby cars
+    SEAWAYS - Cars can drive/hover over water
+    COMEFLYWITHME - Cars can fly
+    WHEELSAREALLINEED - Only the wheels of a car are visible
+    OURGODGIVENRIGHTTOBEARARMS - Peds Carry Guns
+    NOBODYLIKESME - Peds Hate You
+    FIGHTFIGHTFIGHT - Peds Riot
+    GRIPISEVERYTHING - Perfect Handling
+    CHASESTAT - Shows Media Level (when 2+ stars)
+    LIFEISPASSINGMEBY - Speed up game clock
+    LOADSOFLITTLETHINGS - Sportscars have big wheels
+    TRAVELINSTYLE - Spawn a Bloodring Banger
+    GETTHEREQUICKLY - Spawn a Bloodring Banger #2
+    BETTERTHANWALKING - Spawn a Caddie
+    GETTHEREVERYFASTINDEED - Spawn a Hotring Racer
+    GETTHEREAMAZINGLYFAST - Spawn a Hotring Racer #2
+    PANZER - Spawn a Rhino
+    THELASTRIDE - Spawn a Romero's Hearse
+    GETTHEREFAST - Spawn a Sabre Turbo
+    RUBBISHCAR - Spawn a Trashmaster
+    ROCKANDROLLCAR - Spawn Love Fist's Limo

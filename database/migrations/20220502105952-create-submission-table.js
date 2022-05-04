@@ -45,7 +45,7 @@ module.exports = {
 					allowNull: true,
 					type: Sequelize.STRING(255)
 				},
-				createdAt: {
+				updatedAt: {
 					allowNull: false,
 					field: "submissionDate",
 					type: Sequelize.DATE
@@ -57,7 +57,7 @@ module.exports = {
 			}
 		);
 
-		await queryInterface.addIndex("submission", {
+		await queryInterface.addIndex("submissions", {
 			fields: ["assignmentId", "submittedBy"],
 			unique: true
 		});

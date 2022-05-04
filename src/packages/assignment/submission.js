@@ -8,7 +8,13 @@ const assignmentNotFound = res => {
 	});
 };
 
-const idDoubleWay = res => {
+const duplicatedSubmission = res => {
+	return res.status(StatusCodes.BAD_REQUEST).json({
+		message: "Submission already found. Duplicate submission"
+	});
+};
+
+const isDoubleWay = res => {
 	return res
 		.status(StatusCodes.BAD_REQUEST)
 		.json({ message: "You should provide URL or file. Both is not supported" });
@@ -16,13 +22,12 @@ const idDoubleWay = res => {
 
 const noSubmission = res => {
 	return res.status(StatusCodes.BAD_REQUEST).json({
-		message: "No submission proof included"
+		message: "No file or link included"
 	});
 };
 
 module.exports = asyncHandler(async (req, res) => {
-	const { assignmentId } = req.params;
-	const { link } = req.body;
+	const { assignmentId, link } = req.body;
 	const { path } = req.file || { path: null };
 
 	const assignment = await models.assignment.findOne({
@@ -33,7 +38,16 @@ module.exports = asyncHandler(async (req, res) => {
 
 	if (!assignment) return assignmentNotFound(res);
 
-	if (link && path) return idDoubleWay(res);
+	const isSubmissionExist = await models.submission.findOne({
+		where: {
+			assignmentId: assignmentId,
+			submittedBy: req.user.id
+		}
+	});
+
+	if (isSubmissionExist) return duplicatedSubmission(res);
+
+	if (link && path) return isDoubleWay(res);
 
 	if (!link && !path) return noSubmission(res);
 
@@ -46,6 +60,6 @@ module.exports = asyncHandler(async (req, res) => {
 
 	return res.json({
 		message: "Assignment submitted",
-		submission
+		submission: submission
 	});
 });

@@ -42,7 +42,7 @@ const isUniqueUserEmail =
 	};
 
 const isDateValid = date => {
-	if (moment(date) > moment()) {
+	if (moment(date) < moment()) {
 		throw new Error("Input date is invalid");
 	}
 

@@ -4,7 +4,7 @@ const { ADMIN } = require("../../utils/roles.const");
 const models = require("../../models");
 
 module.exports = asyncHandler(async (req, res) => {
-	const { submissionId } = req.params;
+	const { submissionId, mark } = req.body;
 
 	const submission = await models.submission.findOne({
 		where: {
@@ -35,12 +35,12 @@ module.exports = asyncHandler(async (req, res) => {
 	if (!grade) {
 		grade = await models.gradeSheet.create({
 			submissionId: submissionId,
-			mark: req.body.mark
+			mark: mark
 		});
 	}
 
 	await grade.update({
-		mark: req.body.mark,
+		mark: mark,
 		...(req.body.remark && { remark: req.body.remark })
 	});
 

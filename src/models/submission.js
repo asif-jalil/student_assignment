@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
 				allowNull: true,
 				type: DataTypes.STRING(255)
 			},
-			createdAt: {
+			updatedAt: {
 				allowNull: false,
 				field: "submissionDate",
 				type: DataTypes.DATE
@@ -45,7 +45,7 @@ module.exports = (sequelize, DataTypes) => {
 		{
 			tableName: "submissions",
 			timestamps: true,
-			updatedAt: false
+			createdAt: false
 		}
 	);
 
