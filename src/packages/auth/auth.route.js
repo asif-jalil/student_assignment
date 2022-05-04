@@ -11,6 +11,8 @@ const signup = require("./signup");
 const signupRules = require("./signup.rules");
 const addUser = require("./addUser");
 const destroy = require("./destroy");
+const updateUserRules = require("./updateUser.rules");
+const updateUser = require("./updateUser");
 
 const authRoutes = Router();
 
@@ -36,6 +38,14 @@ authRoutes.delete(
 	isAuthenticated,
 	isAuthorized(ADMIN),
 	destroy
+);
+
+authRoutes.patch(
+	"/user",
+	isAuthenticated,
+	isAuthorized(ADMIN),
+	isValidated(updateUserRules),
+	updateUser
 );
 
 module.exports = authRoutes;
