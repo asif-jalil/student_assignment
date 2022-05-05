@@ -14,12 +14,6 @@ const isDoubleWay = res => {
 		.json({ message: "You should provide URL or file. Both is not supported" });
 };
 
-const noSubmission = res => {
-	return res.status(StatusCodes.BAD_REQUEST).json({
-		message: "No file or link included"
-	});
-};
-
 module.exports = asyncHandler(async (req, res) => {
 	const { submissionId, link } = req.body;
 	const { path } = req.file || { path: null };
@@ -29,8 +23,6 @@ module.exports = asyncHandler(async (req, res) => {
 	if (!submission) return submissionNotFound(res);
 
 	if (link && path) return isDoubleWay(res);
-
-	if (!link && !path) return noSubmission(res);
 
 	if (link) {
 		await submission.update({

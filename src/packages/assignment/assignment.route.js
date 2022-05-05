@@ -51,7 +51,12 @@ assignmentRoutes.delete(
 );
 
 // Get all submission
-assignmentRoutes.get("/submission", isAuthenticated, submissions);
+assignmentRoutes.get(
+	"/submission",
+	isAuthenticated,
+	isAuthorized(ADMIN, MENTOR, STUDENT),
+	submissions
+);
 
 // Make submission
 assignmentRoutes.post(
